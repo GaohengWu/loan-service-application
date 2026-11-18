@@ -37,8 +37,8 @@ test('Click Calculate -> Apply Now button enabled  ', async ({}) => {
 
     //Change the loan Period and Apply Now btn becomes disabled
     await homePage.loanPeriod.click()
-    await homePage.page.pause()
-    await homePage.loanPeriod24.click()
+    await homePage.loanPeriod.selectOption('24')
+    //await expect(homePage.loanPeriod).toHaveText('24')
     await expect(homePage.applyLoan).toBeDisabled()
 
     await homePage.calculateLoanAmount.click()
